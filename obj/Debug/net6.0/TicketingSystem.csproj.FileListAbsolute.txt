@@ -1,0 +1,15 @@
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\bin\Debug\net6.0\TicketingSystem.exe
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\bin\Debug\net6.0\TicketingSystem.deps.json
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\bin\Debug\net6.0\TicketingSystem.runtimeconfig.json
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\bin\Debug\net6.0\TicketingSystem.dll
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\bin\Debug\net6.0\TicketingSystem.pdb
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\TicketingSystem.csproj.AssemblyReference.cache
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\TicketingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\TicketingSystem.AssemblyInfoInputs.cache
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\TicketingSystem.AssemblyInfo.cs
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\TicketingSystem.csproj.CoreCompileInputs.cache
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\TicketingSystem.dll
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\refint\TicketingSystem.dll
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\TicketingSystem.pdb
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\TicketingSystem.genruntimeconfig.cache
+C:\Users\herre\OneDrive\Documents\0-WCTC\Herrera-NetDatabases\Week1\TicketingSystem\obj\Debug\net6.0\ref\TicketingSystem.dll
