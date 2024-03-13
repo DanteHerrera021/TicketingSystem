@@ -3,6 +3,8 @@
 string file = Directory.GetCurrentDirectory() + "\\tickets.csv";
 string choice;
 
+TicketAdd add = new TicketAdd(file);
+
 do
 {
     Console.WriteLine("1) Read all tickets.");
@@ -13,26 +15,9 @@ do
 
     if (choice == "1")
     {
-        // read data from file
-        if (File.Exists(file))
+        foreach (Ticket i in add.tickets)
         {
-            StreamReader sr = new StreamReader(file);
-            while (!sr.EndOfStream)
-            {
-                string line = sr.ReadLine();
-                // convert string to array
-                string[] tickArr = line.Split(',');
-                // display array data
-                Console.WriteLine(
-                    "ID: {0}, Summary: {1}, Status: {2}, Priority: {3}, Submitter: {4}, Assigned: {5}, Watching {6}",
-                    tickArr[0], tickArr[1], tickArr[2], tickArr[3], tickArr[4], tickArr[5], tickArr[6]
-                );
-            }
-            sr.Close();
-        }
-        else
-        {
-            Console.WriteLine("File does not exist");
+            Console.WriteLine(i.Display());
         }
     }
     else if (choice == "2")
@@ -64,14 +49,12 @@ do
             Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
             string watch = Console.ReadLine();
 
-            TicketAdd ticket = new TicketAdd(file);
-
             // sw.Write();
         }
         sw.Close();
     }
     else if (choice == "3")
     {
-        TicketAdd add = new TicketAdd(file);
+        // TESTING OPTION
     }
 } while (choice == "1" || choice == "2" || choice == "3");
