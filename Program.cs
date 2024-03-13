@@ -35,23 +35,25 @@ do
             if (resp != "Y") { break; }
             sw.WriteLine();
 
+            Ticket ticket = new Ticket();
+
             Console.WriteLine("Enter the ticket summary.");
-            string sum = Console.ReadLine();
+            ticket.summary = Console.ReadLine();
 
             Console.WriteLine("Enter the ticket status.");
-            string status = Console.ReadLine();
+            ticket.status = Console.ReadLine();
 
             Console.WriteLine("Enter the ticket priority.");
-            string priority = Console.ReadLine();
+            ticket.priority = Console.ReadLine();
 
             Console.WriteLine("Enter the person submitting the ticket.");
-            string submit = Console.ReadLine();
+            ticket.submitter = Console.ReadLine();
 
             Console.WriteLine("Enter the person assigning the ticket.");
-            string assign = Console.ReadLine();
+            ticket.assigner = Console.ReadLine();
 
             Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
-            string watch = Console.ReadLine();
+            ticket.watched = Console.ReadLine();
 
             // sw.Write();
         }
