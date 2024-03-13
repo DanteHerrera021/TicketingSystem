@@ -26,14 +26,11 @@ do
     }
     else if (choice == "2")
     {
-        StreamWriter sw = File.AppendText(file);
-
-        for (int i = 0; i < 7; i++)
+        while (true)
         {
             Console.WriteLine("Add a new ticket (Y/N)?");
             string resp = Console.ReadLine().ToUpper();
             if (resp != "Y") { break; }
-            sw.WriteLine();
 
             Ticket ticket = new Ticket();
 
@@ -55,12 +52,7 @@ do
             Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
             ticket.watched = Console.ReadLine();
 
-            // sw.Write();
+            add.addTicket(ticket);
         }
-        sw.Close();
-    }
-    else if (choice == "3")
-    {
-        // TESTING OPTION
     }
 } while (choice == "1" || choice == "2" || choice == "3");

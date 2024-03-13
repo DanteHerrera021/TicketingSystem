@@ -33,4 +33,14 @@ public class TicketAdd
         sr.Close();
 
     }
+
+    public void addTicket(Ticket ticket)
+    {
+        StreamWriter sw = new StreamWriter(filePath, true);
+        sw.WriteLine();
+        sw.WriteLine($"{ticket.tickID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigner},{ticket.watched},");
+        sw.Close();
+
+        tickets.Add(ticket);
+    }
 }
