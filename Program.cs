@@ -45,8 +45,6 @@ do
             string resp = Console.ReadLine().ToUpper();
             if (resp != "Y") { break; }
             sw.WriteLine();
-            Console.WriteLine("Enter the ticket ID.");
-            string tickID = Console.ReadLine();
 
             Console.WriteLine("Enter the ticket summary.");
             string sum = Console.ReadLine();
@@ -66,7 +64,17 @@ do
             Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
             string watch = Console.ReadLine();
 
-            sw.Write("{0},{1},{2},{3},{4},{5},{6}", tickID, sum, status, priority, submit, assign, watch);
+            Ticket ticket = new Ticket
+            {
+                summary = sum,
+                status = status,
+                priority = priority,
+                submitter = submit,
+                assigner = assign,
+                watched = watch
+            };
+
+            // sw.Write("{0},{1},{2},{3},{4},{5},{6}", tickID, sum, status, priority, submit, assign, watch);
         }
         sw.Close();
     }
