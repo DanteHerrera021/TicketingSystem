@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-string file = "tickets.csv";
+string file = Directory.GetCurrentDirectory() + "\\tickets.csv";
 string choice;
 
 do
@@ -64,15 +64,7 @@ do
             Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
             string watch = Console.ReadLine();
 
-            Ticket ticket = new Ticket
-            {
-                summary = sum,
-                status = status,
-                priority = priority,
-                submitter = submit,
-                assigner = assign,
-                watched = watch
-            };
+            TicketAdd ticket = new TicketAdd(file);
 
             // sw.Write();
         }
