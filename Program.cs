@@ -74,7 +74,7 @@ do
                 watched = watch
             };
 
-            // sw.Write("{0},{1},{2},{3},{4},{5},{6}", tickID, sum, status, priority, submit, assign, watch);
+            // sw.Write();
         }
         sw.Close();
     }
