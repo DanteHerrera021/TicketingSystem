@@ -1,17 +1,27 @@
 ﻿using System.Reflection;
+using NLog;
 
+string path = Directory.GetCurrentDirectory() + "\\nlog.config";
 string file = Directory.GetCurrentDirectory() + "\\tickets.csv";
+
+var logger = LogManager.LoadConfiguration(path).GetCurrentClassLogger();
+logger.Info("Program started");
+
 string choice;
 
 TicketAdd add = new TicketAdd(file);
+
+logger.Info($"{add.tickets.Count} tickets on file");
 
 do
 {
     Console.WriteLine("1) Read all tickets.");
     Console.WriteLine("2) Add a ticket to file.");
     Console.WriteLine("Enter any other key to exit.");
-    // input response
+
     choice = Console.ReadLine();
+
+    logger.Info("User choice: {Choice}", choice);
 
     if (choice == "1")
     {
@@ -56,3 +66,4 @@ do
         }
     }
 } while (choice == "1" || choice == "2" || choice == "3");
+logger.Info("Program ended");
