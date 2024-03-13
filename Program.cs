@@ -15,9 +15,13 @@ do
 
     if (choice == "1")
     {
+        Console.WriteLine();
+        Console.WriteLine("--- ALL AVAILABLE TICKETS ---");
+        Console.WriteLine();
         foreach (Ticket i in add.tickets)
         {
             Console.WriteLine(i.Display());
+            Console.WriteLine();
         }
     }
     else if (choice == "2")
