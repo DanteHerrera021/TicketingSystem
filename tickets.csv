@@ -1,2 +1,4 @@
 1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones
-,This is a final test ticket,Open,High,Dante Herrera,John Doe,Jane Doe,
+2,This is a final test ticket,Open,High,Dante Herrera,John Doe,Jane Doe
+3,Checking for IDs in new tickets,Open,Medium,Dante Herrera,Dante Herrera,John Doe|Jane Doe
+4,Tickets working,Closed,Low,Dante Herrera,Dante Herrera,John Doe|Jane Doe

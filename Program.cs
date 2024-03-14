@@ -11,7 +11,7 @@ string choice;
 
 TicketAdd add = new TicketAdd(file);
 
-logger.Info($"{add.tickets.Count} tickets on file");
+logger.Info($"{add.tickets.Count} ticket(s) on file");
 
 do
 {
@@ -43,6 +43,8 @@ do
             if (resp != "Y") { break; }
 
             Ticket ticket = new Ticket();
+
+            ticket.tickID = (int.Parse(add.tickets[add.tickets.Count - 1].tickID) + 1).ToString();
 
             Console.WriteLine("Enter the ticket summary.");
             ticket.summary = Console.ReadLine();
