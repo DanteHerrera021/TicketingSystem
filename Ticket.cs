@@ -8,7 +8,7 @@ public class Ticket
     public string assigner { get; set; }
     public string watched { get; set; }
 
-    public string Display()
+    public virtual string Display()
     {
         return $"ID: {tickID}\nSummary: {summary}\nStatus: {status}, Priority: {priority}\nSubmitter: {submitter}, Assigned: {assigner}\nWatched: {watched}";
     }
