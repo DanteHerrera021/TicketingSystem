@@ -34,11 +34,31 @@ public class TicketAdd
 
     }
 
-    public void addTicket(Ticket ticket)
+    public void addBug(BugTicket ticket)
     {
         StreamWriter sw = new StreamWriter(filePath, true);
         sw.WriteLine();
-        sw.Write($"{ticket.tickID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigner},{ticket.watched}");
+        sw.Write($"{ticket.tickID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigner},{ticket.watched},{ticket.severity}");
+        sw.Close();
+
+        tickets.Add(ticket);
+    }
+
+    public void addEnhancement(EnhancementTicket ticket)
+    {
+        StreamWriter sw = new StreamWriter(filePath, true);
+        sw.WriteLine();
+        sw.Write($"{ticket.tickID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigner},{ticket.watched},{ticket.software},{ticket.cost},{ticket.reason},{ticket.estimate}");
+        sw.Close();
+
+        tickets.Add(ticket);
+    }
+
+    public void addTask(TaskTicket ticket)
+    {
+        StreamWriter sw = new StreamWriter(filePath, true);
+        sw.WriteLine();
+        sw.Write($"{ticket.tickID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigner},{ticket.watched},{ticket.projectName},{ticket.dueDate}");
         sw.Close();
 
         tickets.Add(ticket);
