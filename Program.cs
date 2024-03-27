@@ -42,6 +42,9 @@ do
             string resp = Console.ReadLine().ToUpper();
             if (resp != "Y") { break; }
 
+            Console.WriteLine("Type '1' for bugs, type '2' for enhancements, or type '3' for tasks");
+            string type = Console.ReadLine();
+
             Ticket ticket = new Ticket();
 
             ticket.tickID = (int.Parse(add.tickets[add.tickets.Count - 1].tickID) + 1).ToString();
@@ -64,7 +67,7 @@ do
             Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
             ticket.watched = Console.ReadLine();
 
-            add.addTicket(ticket);
+            // add.addTicket(ticket);
         }
     }
 } while (choice == "1" || choice == "2" || choice == "3");
