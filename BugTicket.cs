@@ -1,4 +1,4 @@
-public class BugTicket
+public class BugTicket : Ticket
 {
 
 }

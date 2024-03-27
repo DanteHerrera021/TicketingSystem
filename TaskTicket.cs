@@ -1,4 +1,4 @@
-public class TaskTicket
+public class TaskTicket : Ticket
 {
 
 }

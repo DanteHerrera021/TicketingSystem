@@ -1,4 +1,4 @@
-public class EnhancementTicket
+public class EnhancementTicket : Ticket
 {
 
 }
