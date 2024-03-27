@@ -45,29 +45,109 @@ do
             Console.WriteLine("Type '1' for bugs, type '2' for enhancements, or type '3' for tasks");
             string type = Console.ReadLine();
 
-            Ticket ticket = new Ticket();
+            if (type == "1")
+            {
+                BugTicket ticket = new BugTicket
+                {
+                    tickID = (int.Parse(add.tickets[add.tickets.Count - 1].tickID) + 1).ToString()
+                };
 
-            ticket.tickID = (int.Parse(add.tickets[add.tickets.Count - 1].tickID) + 1).ToString();
+                Console.WriteLine("Enter the ticket summary.");
+                ticket.summary = Console.ReadLine();
 
-            Console.WriteLine("Enter the ticket summary.");
-            ticket.summary = Console.ReadLine();
+                Console.WriteLine("Enter the ticket status.");
+                ticket.status = Console.ReadLine();
 
-            Console.WriteLine("Enter the ticket status.");
-            ticket.status = Console.ReadLine();
+                Console.WriteLine("Enter the ticket priority.");
+                ticket.priority = Console.ReadLine();
 
-            Console.WriteLine("Enter the ticket priority.");
-            ticket.priority = Console.ReadLine();
+                Console.WriteLine("Enter the person submitting the ticket.");
+                ticket.submitter = Console.ReadLine();
 
-            Console.WriteLine("Enter the person submitting the ticket.");
-            ticket.submitter = Console.ReadLine();
+                Console.WriteLine("Enter the person assigning the ticket.");
+                ticket.assigner = Console.ReadLine();
 
-            Console.WriteLine("Enter the person assigning the ticket.");
-            ticket.assigner = Console.ReadLine();
+                Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
+                ticket.watched = Console.ReadLine();
 
-            Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
-            ticket.watched = Console.ReadLine();
+                Console.WriteLine("Enter the severity of the bug");
+                ticket.severity = Console.ReadLine();
 
-            // add.addTicket(ticket);
+                add.addBug(ticket);
+            }
+            else if (type == "2")
+            {
+                EnhancementTicket ticket = new EnhancementTicket
+                {
+                    tickID = (int.Parse(add.tickets[add.tickets.Count - 1].tickID) + 1).ToString()
+                };
+
+                Console.WriteLine("Enter the ticket summary.");
+                ticket.summary = Console.ReadLine();
+
+                Console.WriteLine("Enter the ticket status.");
+                ticket.status = Console.ReadLine();
+
+                Console.WriteLine("Enter the ticket priority.");
+                ticket.priority = Console.ReadLine();
+
+                Console.WriteLine("Enter the person submitting the ticket.");
+                ticket.submitter = Console.ReadLine();
+
+                Console.WriteLine("Enter the person assigning the ticket.");
+                ticket.assigner = Console.ReadLine();
+
+                Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
+                ticket.watched = Console.ReadLine();
+
+                Console.WriteLine("Enter the software is needed");
+                ticket.software = Console.ReadLine();
+
+                Console.WriteLine("Enter the cost of the enhancement");
+                ticket.cost = Console.ReadLine();
+
+                Console.WriteLine("Enter the reason for the ticket");
+                ticket.reason = Console.ReadLine();
+
+                Console.WriteLine("Enter the estimate of the enhancement");
+                ticket.estimate = Console.ReadLine();
+
+                add.addEnhancement(ticket);
+            }
+            else if (type == "3")
+            {
+                TaskTicket ticket = new TaskTicket
+                {
+                    tickID = (int.Parse(add.tickets[add.tickets.Count - 1].tickID) + 1).ToString()
+                };
+
+                Console.WriteLine("Enter the ticket summary.");
+                ticket.summary = Console.ReadLine();
+
+                Console.WriteLine("Enter the ticket status.");
+                ticket.status = Console.ReadLine();
+
+                Console.WriteLine("Enter the ticket priority.");
+                ticket.priority = Console.ReadLine();
+
+                Console.WriteLine("Enter the person submitting the ticket.");
+                ticket.submitter = Console.ReadLine();
+
+                Console.WriteLine("Enter the person assigning the ticket.");
+                ticket.assigner = Console.ReadLine();
+
+                Console.WriteLine("Enter the people being watched (separated by | Ex: John Doe|Jane Doe).");
+                ticket.watched = Console.ReadLine();
+
+                Console.WriteLine("Enter the project name");
+                ticket.projectName = Console.ReadLine();
+
+                Console.WriteLine("Enter the due date of the project");
+                ticket.dueDate = Console.ReadLine();
+
+                add.addTask(ticket);
+            }
+
         }
     }
 } while (choice == "1" || choice == "2" || choice == "3");

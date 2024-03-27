@@ -1,4 +1,4 @@
-public class Ticket
+public abstract class Ticket
 {
     public string tickID { get; set; }
     public string summary { get; set; }
