@@ -14,6 +14,8 @@ public class TicketAdd
         taskFilePath = taskTicketFP;
 
         bugTickets = new List<BugTicket>();
+        enhancementTickets = new List<EnhancementTicket>();
+        taskTickets = new List<TaskTicket>();
 
         StreamReader sr = new StreamReader(bugFilePath);
         while (!sr.EndOfStream)

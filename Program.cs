@@ -55,13 +55,6 @@ do
                 Console.WriteLine();
             }
         }
-
-
-
-
-
-
-
     }
     else if (choice == "2")
     {
@@ -76,10 +69,15 @@ do
 
             if (type == "1")
             {
-                BugTicket ticket = new BugTicket
+                BugTicket ticket = new BugTicket();
+                if (add.bugTickets.Count > 0)
                 {
-                    tickID = (int.Parse(add.bugTickets[add.bugTickets.Count - 1].tickID) + 1).ToString()
-                };
+                    ticket.tickID = (int.Parse(add.bugTickets[add.bugTickets.Count - 1].tickID) + 1).ToString();
+                }
+                else
+                {
+                    ticket.tickID = "0";
+                }
 
                 Console.WriteLine("Enter the ticket summary.");
                 ticket.summary = Console.ReadLine();
@@ -106,10 +104,15 @@ do
             }
             else if (type == "2")
             {
-                EnhancementTicket ticket = new EnhancementTicket
+                EnhancementTicket ticket = new EnhancementTicket();
+                if (add.enhancementTickets.Count > 0)
                 {
-                    tickID = (int.Parse(add.enhancementTickets[add.enhancementTickets.Count - 1].tickID) + 1).ToString()
-                };
+                    ticket.tickID = (int.Parse(add.enhancementTickets[add.enhancementTickets.Count - 1].tickID) + 1).ToString();
+                }
+                else
+                {
+                    ticket.tickID = "0";
+                }
 
                 Console.WriteLine("Enter the ticket summary.");
                 ticket.summary = Console.ReadLine();
@@ -145,10 +148,15 @@ do
             }
             else if (type == "3")
             {
-                TaskTicket ticket = new TaskTicket
+                TaskTicket ticket = new TaskTicket();
+                if (add.taskTickets.Count > 0)
                 {
-                    tickID = (int.Parse(add.taskTickets[add.taskTickets.Count - 1].tickID) + 1).ToString()
-                };
+                    ticket.tickID = (int.Parse(add.taskTickets[add.taskTickets.Count - 1].tickID) + 1).ToString();
+                }
+                else
+                {
+                    ticket.tickID = "0";
+                }
 
                 Console.WriteLine("Enter the ticket summary.");
                 ticket.summary = Console.ReadLine();
