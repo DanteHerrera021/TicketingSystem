@@ -25,27 +25,41 @@ do
 
     if (choice == "1")
     {
-        Console.WriteLine();
-        Console.WriteLine("--- ALL AVAILABLE TICKETS ---");
-        Console.WriteLine();
+        Console.WriteLine("Type '1' for bugs, type '2' for enhancements, or type '3' for tasks");
+        string type = Console.ReadLine();
 
-        foreach (Ticket i in add.bugTickets)
+        if (type == "1")
         {
-            Console.WriteLine(i.Display());
-            Console.WriteLine();
+            Console.WriteLine("\n--- ALL AVAILABLE BUG TICKETS ---\n");
+            foreach (Ticket i in add.bugTickets)
+            {
+                Console.WriteLine(i.Display());
+                Console.WriteLine();
+            }
+        }
+        else if (type == "2")
+        {
+            foreach (Ticket i in add.enhancementTickets)
+            {
+                Console.WriteLine(i.Display());
+                Console.WriteLine();
+            }
+        }
+        else if (type == "3")
+        {
+            foreach (Ticket i in add.taskTickets)
+            {
+                Console.WriteLine(i.Display());
+                Console.WriteLine();
+            }
         }
 
-        foreach (Ticket i in add.enhancementTickets)
-        {
-            Console.WriteLine(i.Display());
-            Console.WriteLine();
-        }
 
-        foreach (Ticket i in add.taskTickets)
-        {
-            Console.WriteLine(i.Display());
-            Console.WriteLine();
-        }
+
+
+
+
+
     }
     else if (choice == "2")
     {
