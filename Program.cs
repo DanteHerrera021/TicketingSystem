@@ -2,14 +2,16 @@
 using NLog;
 
 string path = Directory.GetCurrentDirectory() + "\\nlog.config";
-string file = Directory.GetCurrentDirectory() + "\\tickets.csv";
+string bugFile = Directory.GetCurrentDirectory() + "\\Tickets.csv";
+string enhancementFile = Directory.GetCurrentDirectory() + "\\Enhancements.csv";
+string taskFile = Directory.GetCurrentDirectory() + "\\Tasks.csv";
 
 var logger = LogManager.LoadConfiguration(path).GetCurrentClassLogger();
 logger.Info("Program started");
 
 string choice;
 
-TicketAdd add = new TicketAdd(file);
+TicketAdd add = new TicketAdd(bugFile, enhancementFile, taskFile);
 
 logger.Info($"{add.bugTickets.Count + add.enhancementTickets.Count + add.taskTickets.Count} ticket(s) on file");
 

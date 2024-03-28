@@ -1,13 +1,17 @@
 public class TicketAdd
 {
-    public string filePath { get; set; }
+    public string bugFilePath { get; set; }
+    public string enhancementFilePath { get; set; }
+    public string taskFilePath { get; set; }
     public List<BugTicket> bugTickets { get; set; }
     public List<EnhancementTicket> enhancementTickets { get; set; }
     public List<TaskTicket> taskTickets { get; set; }
 
-    public TicketAdd(string ticketFilePath)
+    public TicketAdd(string bugTicketFP, string enhancementTicketFP, string taskTicketFP)
     {
-        filePath = ticketFilePath;
+        bugFilePath = bugTicketFP;
+        enhancementFilePath = enhancementTicketFP;
+        taskFilePath = taskTicketFP;
 
         bugTickets = new List<BugTicket>();
 
@@ -39,7 +43,7 @@ public class TicketAdd
 
     public void addBug(BugTicket ticket)
     {
-        StreamWriter sw = new StreamWriter(filePath, true);
+        StreamWriter sw = new StreamWriter(bugFilePath, true);
         sw.WriteLine();
         sw.Write($"{ticket.tickID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigner},{ticket.watched},{ticket.severity}");
         sw.Close();
@@ -49,7 +53,7 @@ public class TicketAdd
 
     public void addEnhancement(EnhancementTicket ticket)
     {
-        StreamWriter sw = new StreamWriter(filePath, true);
+        StreamWriter sw = new StreamWriter(enhancementFilePath, true);
         sw.WriteLine();
         sw.Write($"{ticket.tickID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigner},{ticket.watched},{ticket.software},{ticket.cost},{ticket.reason},{ticket.estimate}");
         sw.Close();
@@ -59,7 +63,7 @@ public class TicketAdd
 
     public void addTask(TaskTicket ticket)
     {
-        StreamWriter sw = new StreamWriter(filePath, true);
+        StreamWriter sw = new StreamWriter(taskFilePath, true);
         sw.WriteLine();
         sw.Write($"{ticket.tickID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigner},{ticket.watched},{ticket.projectName},{ticket.dueDate}");
         sw.Close();
