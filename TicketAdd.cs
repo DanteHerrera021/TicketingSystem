@@ -15,27 +15,73 @@ public class TicketAdd
 
         bugTickets = new List<BugTicket>();
 
-        StreamReader sr = new StreamReader(filePath);
+        StreamReader sr = new StreamReader(bugFilePath);
         while (!sr.EndOfStream)
         {
-            // string line = sr.ReadLine();
+            string line = sr.ReadLine();
 
-            // string[] tickArr = line.Split(',');
+            string[] tickArr = line.Split(',');
 
-            // // Console.WriteLine(tickArr[4]);
+            BugTicket ticket = new BugTicket
+            {
+                tickID = tickArr[0],
+                summary = tickArr[1],
+                status = tickArr[2],
+                priority = tickArr[3],
+                submitter = tickArr[4],
+                assigner = tickArr[5],
+                watched = tickArr[6],
+                severity = tickArr[7]
+            };
+            bugTickets.Add(ticket);
+        }
+        sr.Close();
 
-            // Ticket ticket = new Ticket
-            // {
-            //     tickID = tickArr[0],
-            //     summary = tickArr[1],
-            //     status = tickArr[2],
-            //     priority = tickArr[3],
-            //     submitter = tickArr[4],
-            //     assigner = tickArr[5],
-            //     watched = tickArr[6]
-            // };
+        sr = new StreamReader(enhancementFilePath);
+        while (!sr.EndOfStream)
+        {
+            string line = sr.ReadLine();
 
-            // tickets.Add(ticket);
+            string[] tickArr = line.Split(',');
+
+            EnhancementTicket ticket = new EnhancementTicket
+            {
+                tickID = tickArr[0],
+                summary = tickArr[1],
+                status = tickArr[2],
+                priority = tickArr[3],
+                submitter = tickArr[4],
+                assigner = tickArr[5],
+                watched = tickArr[6],
+                software = tickArr[7],
+                cost = tickArr[8],
+                reason = tickArr[9],
+                estimate = tickArr[10]
+            };
+            enhancementTickets.Add(ticket);
+        }
+        sr.Close();
+
+        sr = new StreamReader(taskFilePath);
+        while (!sr.EndOfStream)
+        {
+            string line = sr.ReadLine();
+
+            string[] tickArr = line.Split(',');
+
+            TaskTicket ticket = new TaskTicket
+            {
+                tickID = tickArr[0],
+                summary = tickArr[1],
+                status = tickArr[2],
+                priority = tickArr[3],
+                submitter = tickArr[4],
+                assigner = tickArr[5],
+                watched = tickArr[6],
+                projectName = tickArr[7],
+                dueDate = tickArr[8]
+            };
+            taskTickets.Add(ticket);
         }
         sr.Close();
 
