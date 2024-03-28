@@ -30,6 +30,8 @@ do
         Console.WriteLine("Type '1' for bugs, type '2' for enhancements, or type '3' for tasks");
         string type = Console.ReadLine();
 
+        logger.Info("User choice: {Type}", type);
+
         if (type == "1")
         {
             Console.WriteLine("\n--- ALL AVAILABLE BUG TICKETS ---\n");
@@ -64,8 +66,12 @@ do
             string resp = Console.ReadLine().ToUpper();
             if (resp != "Y") { break; }
 
+            logger.Info("User choice: {Resp}", resp);
+
             Console.WriteLine("Type '1' for bugs, type '2' for enhancements, or type '3' for tasks");
             string type = Console.ReadLine();
+
+            logger.Info("User choice: {Type}", type);
 
             if (type == "1")
             {
@@ -101,6 +107,8 @@ do
                 ticket.severity = Console.ReadLine();
 
                 add.addBug(ticket);
+
+                logger.Info($"{add.bugTickets.Count} bug tickets on file");
             }
             else if (type == "2")
             {
@@ -145,6 +153,8 @@ do
                 ticket.estimate = Console.ReadLine();
 
                 add.addEnhancement(ticket);
+
+                logger.Info($"{add.enhancementTickets.Count} enhancement tickets on file");
             }
             else if (type == "3")
             {
@@ -183,6 +193,8 @@ do
                 ticket.dueDate = Console.ReadLine();
 
                 add.addTask(ticket);
+
+                logger.Info($"{add.taskTickets.Count} task tickets on file");
             }
 
         }
