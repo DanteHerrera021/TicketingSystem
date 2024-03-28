@@ -11,7 +11,7 @@ string choice;
 
 TicketAdd add = new TicketAdd(file);
 
-logger.Info($"{add.tickets.Count} ticket(s) on file");
+logger.Info($"{add.bugTickets.Count + add.enhancementTickets.Count + add.taskTickets.Count} ticket(s) on file");
 
 do
 {
@@ -28,7 +28,20 @@ do
         Console.WriteLine();
         Console.WriteLine("--- ALL AVAILABLE TICKETS ---");
         Console.WriteLine();
-        foreach (Ticket i in add.tickets)
+
+        foreach (Ticket i in add.bugTickets)
+        {
+            Console.WriteLine(i.Display());
+            Console.WriteLine();
+        }
+
+        foreach (Ticket i in add.enhancementTickets)
+        {
+            Console.WriteLine(i.Display());
+            Console.WriteLine();
+        }
+
+        foreach (Ticket i in add.taskTickets)
         {
             Console.WriteLine(i.Display());
             Console.WriteLine();
@@ -49,7 +62,7 @@ do
             {
                 BugTicket ticket = new BugTicket
                 {
-                    tickID = (int.Parse(add.tickets[add.tickets.Count - 1].tickID) + 1).ToString()
+                    tickID = (int.Parse(add.bugTickets[add.bugTickets.Count - 1].tickID) + 1).ToString()
                 };
 
                 Console.WriteLine("Enter the ticket summary.");
@@ -79,7 +92,7 @@ do
             {
                 EnhancementTicket ticket = new EnhancementTicket
                 {
-                    tickID = (int.Parse(add.tickets[add.tickets.Count - 1].tickID) + 1).ToString()
+                    tickID = (int.Parse(add.enhancementTickets[add.enhancementTickets.Count - 1].tickID) + 1).ToString()
                 };
 
                 Console.WriteLine("Enter the ticket summary.");
@@ -118,7 +131,7 @@ do
             {
                 TaskTicket ticket = new TaskTicket
                 {
-                    tickID = (int.Parse(add.tickets[add.tickets.Count - 1].tickID) + 1).ToString()
+                    tickID = (int.Parse(add.taskTickets[add.taskTickets.Count - 1].tickID) + 1).ToString()
                 };
 
                 Console.WriteLine("Enter the ticket summary.");
